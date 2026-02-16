@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Utility Converter App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Utility Converter App</h1>
+      <h1>Utility Converter App</h1>
     </header>
 
-        <!-- Good Morning to all the contributor of this great task that we have been asigned.
+    <!-- Good Morning to all the contributor of this great task that we have been asigned.
 
         bellow is the breakdown of individual responsibilty:
 
@@ -30,19 +33,55 @@
         Thank you all and good luck. -->
 
     <main>
+      <!-- Temperature Converter -->
+      <section class="converter">
+        <h2>
+          Temperature Converter (Celsius ↔
+          Fahrenheit)
+        </h2>
+        <input
+          type="number"
+          id="celsius"
+          placeholder="Celsius"
+        />
+        <input
+          type="number"
+          id="fahrenheit"
+          placeholder="Fahrenheit"
+        />
+        <button id="convert-temp">Convert</button>
+      </section>
 
+      <!-- Color Converter -->
+      <header>
+        <h1>Color Converter Section</h1>
+      </header>
+      <section class="converter-section">
+        <div class="converter-card">
+          <h2>Hex to RGB</h2>
 
-        <!-- Temperature Converter -->
-        <section class="converter">
-            <h2>Temperature Converter (Celsius ↔ Fahrenheit)</h2>
-            <input type="number" id="celsius" placeholder="Celsius">
-            <input type="number" id="fahrenheit" placeholder="Fahrenheit">
-            <button id="convert-temp">Convert</button>
-        </section>
+          <div class="input-group">
+            <input
+              type="text"
+              id="hexInput"
+              placeholder="#ff5733"
+            />
+            <button onclick="convertHex()">
+              Convert
+            </button>
+          </div>
+
+          <div class="result" id="result">
+            RGB: --
+          </div>
+          <div
+            class="color-preview"
+            id="preview"
+          ></div>
+        </div>
+      </section>
     </main>
 
-  
-
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

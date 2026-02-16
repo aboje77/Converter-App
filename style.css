@@ -24,7 +24,7 @@ main {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .converter h2 {
@@ -60,3 +60,71 @@ footer {
     color: #fff;
     margin-top: 20px;
 }
+
+
+
+/* ====== COLOR CONVERTER SECTION STYLING ====== */
+.converter-section {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,
+            #1e1e2f,
+            #2b2b45);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.converter-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 320px;
+}
+
+.converter-card h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #4f46e5;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #4338ca;
+}
+
+.result {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.color-preview {
+    height: 60px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* ====== COLOR CONVERTER SECTION STYLING ENDS HERE====== */
