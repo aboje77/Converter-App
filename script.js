@@ -1,76 +1,87 @@
-// ===== Months to Days Converter =====
-function convertToDays() {
-    const months = document.getElementById("months").value;
-    if (months === "" || isNaN(months) || months < 0) {
-        document.getElementById("result").innerText = "Please enter a valid number of months.";
+// Get DOM elements
+const metersInput = document.getElementById('meters');
+const feetInput = document.getElementById('feet');
+const convertBtn = document.getElementById('convertBtn');
+const clearBtn = document.getElementById('clearBtn');
+
+// Conversion constant
+const METERS_TO_FEET = 3.28084;
+
+// Convert meters to feet
+function metersToFeet(meters) {
+    return meters * METERS_TO_FEET;
+}
+
+// Convert feet to meters
+function feetToMeters(feet) {
+    return feet / METERS_TO_FEET;
+}
+
+// Format number to 2 decimal places
+function formatNumber(number) {
+    return Math.round(number * 100) / 100;
+}
+
+// Handle conversion button click
+convertBtn.addEventListener('click', function() {
+    const metersValue = parseFloat(metersInput.value);
+    
+    if (isNaN(metersValue) || metersValue === '') {
+        alert('Please enter a valid number in meters');
+        metersInput.focus();
         return;
     }
-
-    const days = months * 30; // Assuming 1 month = 30 days
-    document.getElementById("result").innerText = `${months} month(s) = ${days} day(s)`;
-}
-
-// ===== Temperature Converter =====
-const celsiusInput =
-  document.getElementById("celsius");
-const fahrenheitInput =
-  document.getElementById("fahrenheit");
-const convertTempBtn = document.getElementById(
-  "convert-temp"
-);
-
-convertTempBtn.addEventListener("click", () => {
-  if (celsiusInput.value) {
-    fahrenheitInput.value = (
-      (celsiusInput.value * 9) / 5 +
-      32
-    ).toFixed(2);
-  } else if (fahrenheitInput.value) {
-    celsiusInput.value = (
-      ((fahrenheitInput.value - 32) * 5) /
-      9
-    ).toFixed(2);
-  } else {
-    alert("Enter a value to convert!");
-  }
+    
+    const result = metersToFeet(metersValue);
+    feetInput.value = formatNumber(result);
 });
 
-// Color Converter Script
+// Handle real-time conversion when typing in meters input
+metersInput.addEventListener('input', function() {
+    const metersValue = parseFloat(metersInput.value);
+    
+    if (!isNaN(metersValue) && metersValue !== '') {
+        const result = metersToFeet(metersValue);
+        feetInput.value = formatNumber(result);
+    } else {
+        feetInput.value = '';
+    }
+});
 
-function convertHex() {
-  let hex = document
-    .getElementById("hexInput")
-    .value.trim();
+// Handle real-time conversion when typing in feet input (reverse conversion)
+feetInput.addEventListener('input', function() {
+    const feetValue = parseFloat(feetInput.value);
+    
+    if (!isNaN(feetValue) && feetValue !== '') {
+        const result = feetToMeters(feetValue);
+        metersInput.value = formatNumber(result);
+    } else {
+        metersInput.value = '';
+    }
+});
 
-  // Remove # if user includes it
-  if (hex.startsWith("#")) {
-    hex = hex.slice(1);
-  }
+// Handle Enter key press in meters input
+metersInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        convertBtn.click();
+    }
+});
 
-  // Validate hex length
-  if (hex.length !== 6) {
-    document.getElementById(
-      "result"
-    ).textContent = "Invalid HEX code";
-    return;
-  }
+// Handle Enter key press in feet input
+feetInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        convertBtn.click();
+    }
+});
 
-  // Convert to RGB
-  let r = parseInt(hex.substring(0, 2), 16);
-  let g = parseInt(hex.substring(2, 4), 16);
-  let b = parseInt(hex.substring(4, 6), 16);
+// Handle clear button click
+clearBtn.addEventListener('click', function() {
+    metersInput.value = '';
+    feetInput.value = '';
+    metersInput.focus();
+});
 
-  if (isNaN(r) || isNaN(g) || isNaN(b)) {
-    document.getElementById(
-      "result"
-    ).textContent = "Invalid HEX code";
-    return;
-  }
-
-  document.getElementById(
-    "result"
-  ).textContent = `RGB: rgb(${r}, ${g}, ${b})`;
-  document.getElementById(
-    "preview"
-  ).style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-}
+// Focus on meters input when page loads
+window.addEventListener('load', function() {
+    metersInput.focus();
+});

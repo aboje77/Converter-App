@@ -1,170 +1,169 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background: #f2f2f2;
-    color: #333;
+    box-sizing: border-box;
 }
 
-header {
-    background: #0077cc;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 15px;
-}
-
-.converter {
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.converter h2 {
-    margin-bottom: 15px;
-}
-
-.converter input {
-    padding: 10px;
-    margin: 5px;
-    width: calc(50% - 20px);
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.converter button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    background: #0077cc;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.converter button:hover {
-    background: #005fa3;
-}
-
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #333;
-    color: #fff;
-    margin-top: 20px;
-}
-
-/* ====== Months to Days Converter Section Styling ====== */
-.converter {
-    background-color: #fff;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    text-align: center;
-}
-
-.converter h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.converter input {
-    padding: 10px;
-    width: 200px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.converter button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.converter button:hover {
-    background-color: #0056b3;
-}
-
-#result {
-    margin-top: 20px;
-    font-weight: bold;
-    color: #333;
-}
-/* ====== Months to Days Converter Section Styling ENDS HERE ====== */
-
-/* ====== COLOR CONVERTER SECTION STYLING ====== */
-.converter-section {
-    height: 50vh;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #764ba2 100%);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg,
-            #1e1e2f,
-            #2b2b45);
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
 }
 
 .converter-card {
-    background: #ffffff;
+    background: rgb(212, 210, 210);
+    border-radius: 20px;
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 320px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
-.converter-card h2 {
-    margin-bottom: 20px;
+.converter-card:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
 }
 
 .input-group {
-    display: flex;
-    gap: 10px;
     margin-bottom: 20px;
 }
 
-input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
+label {
+    display: block;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-button {
-    padding: 10px 15px;
-    border: none;
-    background: #4f46e5;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.2s ease;
+input[type="number"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    outline: none;
 }
 
-button:hover {
-    background: #4338ca;
+input[type="number"]:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-.result {
+input[type="number"]:hover {
+    border-color: #999;
+}
+
+.convert-icon {
+    text-align: center;
+    font-size: 32px;
+    color: #667eea;
+    margin: 20px 0;
     font-weight: bold;
-    margin-bottom: 15px;
 }
 
-.color-preview {
-    height: 60px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
 }
 
-/* ====== COLOR CONVERTER SECTION STYLING ENDS HERE====== */
+.btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+.info {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.info p {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Remove spinner from number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .converter-card {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 26px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+}
