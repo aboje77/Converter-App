@@ -3,46 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utility Converter App</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Meters to Feet Converter</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <h1>Utility Converter App</h1>
-    </header>
-
-        <!-- Good Morning to all the contributor of this great task that we have been asigned.
-
-        bellow is the breakdown of individual responsibilty:
-
-        Ab (Team lead) is responsible for utility converter that converts temperature ("Celsius to Fahrenheit")
-
-        Ozeal you are responsible for utility converter that converts ("Meters to feet")
-        
-        Abraham you are responsible for utility converter that converts colors ("HEX to RGB")
-
-        Sammy you are responsible for utility converter that converts time ("Hours to Munites")
-
-        Chika you are responsible for utility converter that converts month ("Month to Days")
-
-        We are all expected to create and work in seperate branches, all the branches will be merged when everybody's
-        project is done by the team lead with all your abled help.
-        Thank you all and good luck. -->
-
-    <main>
-
-
-        <!-- Temperature Converter -->
-        <section class="converter">
-            <h2>Temperature Converter (Celsius ↔ Fahrenheit)</h2>
-            <input type="number" id="celsius" placeholder="Celsius">
-            <input type="number" id="fahrenheit" placeholder="Fahrenheit">
-            <button id="convert-temp">Convert</button>
-        </section>
-    </main>
-
-  
-
-    <script src="script.js"></script>
+    <div class="container">
+        <div class="converter-card">
+            <h1>Length Converter</h1>
+            <p class="subtitle">Convert meters to feet instantly</p>
+            
+            <div class="input-group">
+                <label for="meters">Meters</label>
+                <input 
+                    type="number" 
+                    id="meters" 
+                    placeholder="Enter value in meters"
+                    step="0.01"
+                    autocomplete="off"
+                >
+            </div>
+            
+            <div class="convert-icon">⇅</div>
+            
+            <div class="input-group">
+                <label for="feet">Feet</label>
+                <input 
+                    type="number" 
+                    id="feet" 
+                    placeholder="Result in feet"
+                    step="0.01"
+                    autocomplete="off"
+                >
+            </div>
+            
+            <div class="button-group">
+                <button id="convertBtn" class="btn btn-primary">Convert</button>
+                <button id="clearBtn" class="btn btn-secondary">Clear</button>
+            </div>
+            
+            <div class="info">
+                <p>1 meter = 3.28084 feet</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./script.js"></script>
 </body>
 </html>
