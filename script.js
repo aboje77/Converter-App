@@ -1,3 +1,15 @@
+// ===== Months to Days Converter =====
+function convertToDays() {
+    const months = document.getElementById("months").value;
+    if (months === "" || isNaN(months) || months < 0) {
+        document.getElementById("result").innerText = "Please enter a valid number of months.";
+        return;
+    }
+
+    const days = months * 30; // Assuming 1 month = 30 days
+    document.getElementById("result").innerText = `${months} month(s) = ${days} day(s)`;
+}
+
 // ===== Temperature Converter =====
 const celsiusInput =
   document.getElementById("celsius");
